@@ -101,6 +101,14 @@ var (
 			RequiresRestart: true,
 			Expression:      "false",
 		},
+		{
+			Name:         "vizPresets",
+			Description:  "Visualization presets for common dashboard panel configurations",
+			Stage:        FeatureStagePublicPreview,
+			Owner:        grafanaDatavizSquad,
+			FrontendOnly: true,
+			Expression:   "false",
+		},
 	}
 )
 
