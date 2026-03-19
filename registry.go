@@ -101,6 +101,13 @@ var (
 			RequiresRestart: true,
 			Expression:      "false",
 		},
+		{
+			Name:        "adhocFilterLabelsFromPanels",
+			Description: "Get ad-hoc filter label values from visible panels in the dashboard",
+			Stage:       FeatureStageExperimental,
+			Owner:       grafanaDashboardsSquad,
+			Expression:  "false",
+		},
 	}
 )
 
