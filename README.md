@@ -12,26 +12,30 @@ It uses a simplified version of Grafana's `registry.go` where every branch that 
 git clone https://github.com/Ataraxy-Labs/weave-grafana-demo.git
 cd weave-grafana-demo
 
-git merge branch-a            # clean (fast-forward)
-git merge branch-b            # CONFLICT! git can't merge both additions
+git merge origin/branch-a         # clean (fast-forward)
+git merge origin/branch-b         # CONFLICT! git can't merge both additions
 git merge --abort
 ```
 
 ### 2. Install weave and try again
 
 ```bash
-git reset --hard branch-a     # back to just branch-a merged
-
 brew install ataraxy-labs/tap/weave
 weave setup
 
-git merge branch-b            # clean! weave merges both toggles
+git merge origin/branch-b         # clean! weave merges both toggles
 ```
 
 ### 3. Verify
 
 ```bash
-grep 'Name:' registry.go      # 12 toggles: 10 base + adhocFilter + vizPresets
+grep 'Name:' registry.go          # 12 toggles: 10 base + adhocFilter + vizPresets
+```
+
+### 4. Revert to normal git merging
+
+```bash
+weave unsetup
 ```
 
 ### What happened?
